@@ -3,9 +3,9 @@ import axios from "axios";
 
 export const fetchInvestments = createAsyncThunk(
   "investments/fetchInvestments",
-  async ({ page, limit }: { page: number; limit: number }) => {
+  async () => {
     const res = await axios.get(
-      `http://localhost:3001/investments?_page=${page}&_limit=${limit}`
+      `http://localhost:3001/investments`
     );
     return res.data;
   }

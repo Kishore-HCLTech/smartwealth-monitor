@@ -9,11 +9,13 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 import { Eye, EyeOff } from "lucide-react";
 import { loginSuccess } from "@/redux/service/authSlice";
 import { API_BASE_URL, APP_NAME } from "@/constants/appConstants";
+import { fetchInvestments } from "@/redux/service/investmentSlice";
+import { useAppDispatch } from '@/hooks/hooks';
+
 
 const schema = yup.object().shape({
   username: yup.string().required("Username is required"),
@@ -27,7 +29,7 @@ type FormData = {
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [error, setError] = useState("");
   const {
@@ -75,6 +77,7 @@ const Login = () => {
 
         localStorage.setItem("user", JSON.stringify(user));
         dispatch(loginSuccess(user));
+        dispatch(fetchInvestments());
 
         toast.success("Login Successful!");
 
