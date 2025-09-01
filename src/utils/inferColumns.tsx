@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Skeleton } from '@/components/ui/skeleton';
 import type { ColumnDef } from '@tanstack/react-table';
 
 type ColumnOptions = {
@@ -23,20 +22,33 @@ export default function inferColumns<T extends object>(
 
       return {
         accessorKey: key,
-        header: () => (
-          <div className={options?.headerClassName}>
-            {key.charAt(0).toUpperCase() + key.slice(1)}
-          </div>
-        ),
+        // header: () => (
+        //   <div className={options?.headerClassName}>
+        //     {key.charAt(0).toUpperCase() + key.slice(1)}
+        //   </div>
+        // ),
+        
+        header: () => {
+          let formattedKey = key;
+          // Insert space between camelCase or PascalCase words
+          formattedKey = key.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+          return (
+            <div className={options?.headerClassName}>
+              {formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1)}
+            </div>
+          );
+        },
+
         cell: (info) => {
           const value = info.getValue() as string | number;
           const row = info.row.original as T;
 
           const isNumber = typeof value === 'number';
           const conditionalClass = isNumber
-            ? value < 20
-              ? 'text-red-600'
-              : 'text-green-600'
+            ? value < 20 ? '' : ''
+              // ? 'text-red-600'
+              // : 'text-green-600'
             : options?.cellClassName ?? '';
 
           if (key === 'name') {
@@ -58,7 +70,7 @@ export default function inferColumns<T extends object>(
                     }}
                   />
                   <AvatarFallback>
-                    <Skeleton className="w-10 h-10 rounded-full" />
+                    <img src="\src\assets\icici-bank-logo.png"/>
                   </AvatarFallback>
                 </Avatar>
                 <span className={conditionalClass}>{value}</span>
