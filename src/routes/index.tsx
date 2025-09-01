@@ -5,6 +5,7 @@ import type { RouteObject } from "react-router-dom";
 
 //Normal Imports
 import Login from "@/pages/Login";
+import ProtectedRoute from "./ProtectedRoute";
 
 //Lazy Imports
 const Home = lazy(() => import("@/pages/Home"));
@@ -19,15 +20,22 @@ const FixedDeposit = lazy(() => import("@/pages/FixedDeposit"));
 
 export const routes: RouteObject[] = [
   { path: "/", element: <Login /> },
-  { path: "/dashboard", element: <Dashboard /> },
-  { path: "/home", element: <Home /> },
-  { path: "/investment", element: <Investment /> },
-  { path: "/policy-overview", element: <Policy /> },
-  { path: "/roi-calculator", element: <ROICalculator /> },
-  { path: "/renewal-alert", element: <RenewalAlert /> },
-  { path: "/investment/stocks", element: <Stocks /> },
-  { path: "/investment/mutual-funds", element: <MutualFunds /> },
-  { path: "/investment/fixed-deposit", element: <FixedDeposit /> },
+  { path: "/login", element: <Login /> },
+  {
+    path: "/",
+    element: <ProtectedRoute />,
+    children: [
+      { path: "/dashboard", element: <Dashboard /> },
+      { path: "/home", element: <Home /> },
+      { path: "/investment", element: <Investment /> },
+      { path: "/policy-overview", element: <Policy /> },
+      { path: "/roi-calculator", element: <ROICalculator /> },
+      { path: "/renewal-alert", element: <RenewalAlert /> },
+      { path: "/investment/stocks", element: <Stocks /> },
+      { path: "/investment/mutual-funds", element: <MutualFunds /> },
+      { path: "/investment/fixed-deposit", element: <FixedDeposit /> },
+    ],
+  },
 
   { path: "*", element: <Navigate to="/" replace /> },
 ];

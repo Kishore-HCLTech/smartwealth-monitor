@@ -19,6 +19,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { PolicyCard } from "@/components/PolicyCard";
 
 const Policies = () => {
   const dispatch = useAppDispatch();
@@ -45,7 +46,7 @@ const Policies = () => {
 
       {status === "loading" && <p>Loading...</p>}
 
-      <Table>
+      {/* <Table>
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -66,7 +67,13 @@ const Policies = () => {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+      </Table> */}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {policies.map((policy: Policy) => (
+          <PolicyCard key={policy.id} policy={policy} />
+        ))}
+      </div>
 
       <div className="mt-6 flex justify-center">
         <Pagination>
