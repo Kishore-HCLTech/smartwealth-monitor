@@ -2,14 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { fetchPolicies } from "@/redux/service/policySlice";
 import type { Policy } from "@/types/policy";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+
 import {
   Pagination,
   PaginationContent,
@@ -45,29 +38,6 @@ const Policies = () => {
       <h1 className="text-2xl font-bold mb-4">Policy Overview</h1>
 
       {status === "loading" && <p>Loading...</p>}
-
-      {/* <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead>Premium</TableHead>
-            <TableHead>Renewal Date</TableHead>
-            <TableHead>Maturity Date</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {policies.map((policy: Policy) => (
-            <TableRow key={policy.id}>
-              <TableCell>{policy.name}</TableCell>
-              <TableCell>{policy.type}</TableCell>
-              <TableCell>₹{policy.premium}</TableCell>
-              <TableCell>{policy.renewalDate}</TableCell>
-              <TableCell>{policy.maturityDate}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {policies.map((policy: Policy) => (
