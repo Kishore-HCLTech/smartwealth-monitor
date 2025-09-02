@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import type { ColumnDef } from '@tanstack/react-table';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import type { ColumnDef } from "@tanstack/react-table";
 
 type ColumnOptions = {
   disableSorting?: string[];
@@ -14,11 +14,11 @@ export default function inferColumns<T extends object>(
   if (data.length === 0) return [];
 
   return Object.keys(data[0])
-    .filter((key) => !['logo', 'id', 'category'].includes(key))
+    .filter((key) => !["logo", "id", "category"].includes(key))
     .map((key) => {
       const disableSort = options?.disableSorting?.includes(key);
       const sortingFn =
-        typeof data[0][key as keyof T] === 'number' ? 'basic' : 'alphanumeric';
+        typeof data[0][key as keyof T] === "number" ? "basic" : "alphanumeric";
 
       return {
         accessorKey: key,
@@ -27,11 +27,11 @@ export default function inferColumns<T extends object>(
         //     {key.charAt(0).toUpperCase() + key.slice(1)}
         //   </div>
         // ),
-        
+
         header: () => {
           let formattedKey = key;
           // Insert space between camelCase or PascalCase words
-          formattedKey = key.replace(/([a-z])([A-Z])/g, '$1 $2');
+          formattedKey = key.replace(/([a-z])([A-Z])/g, "$1 $2");
 
           return (
             <div className={options?.headerClassName}>
@@ -44,19 +44,21 @@ export default function inferColumns<T extends object>(
           const value = info.getValue() as string | number;
           const row = info.row.original as T;
 
-          const isNumber = typeof value === 'number';
+          const isNumber = typeof value === "number";
           const conditionalClass = isNumber
-            ? value < 20 ? '' : ''
-              // ? 'text-red-600'
+            ? value < 20
+              ? ""
+              : ""
+            : // ? 'text-red-600'
               // : 'text-green-600'
-            : options?.cellClassName ?? '';
+              options?.cellClassName ?? "";
 
-          if (key === 'name') {
+          if (key === "name") {
             const logoUrl =
-              typeof (row as any)['company logo'] === 'string' &&
-                (row as any)['company logo'].trim() !== ''
-                ? (row as any)['company logo']
-                : '';
+              typeof (row as any)["company logo"] === "string" &&
+              (row as any)["company logo"].trim() !== ""
+                ? (row as any)["company logo"]
+                : "";
 
             return (
               <div className="flex items-center gap-2">
@@ -66,11 +68,11 @@ export default function inferColumns<T extends object>(
                     alt="Company Logo"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
-                      e.currentTarget.src = ''; // Clear src to trigger fallback
+                      e.currentTarget.src = ""; // Clear src to trigger fallback
                     }}
                   />
                   <AvatarFallback>
-                    <img src="\src\assets\icici-bank-logo.png"/>
+                    <img src="\src\assets\icici-bank-logo.png" />
                   </AvatarFallback>
                 </Avatar>
                 <span className={conditionalClass}>{value}</span>

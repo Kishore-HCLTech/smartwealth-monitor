@@ -174,13 +174,37 @@ export default function ROICalculator() {
                 ? `Holding Period (Years): ${years}`
                 : `Investment Period (Years): ${years}`}
             </Label>
+            {/* <Slider
+              value={[years]}
+              min={1}
+              max={10}
+              step={1}
+              onValueChange={(val) => setYears(val[0])}
+            /> */}
+
             <Slider
               value={[years]}
               min={1}
               max={10}
               step={1}
               onValueChange={(val) => setYears(val[0])}
-            />
+              className="relative flex items-center w-full h-5"
+            >
+              <div className="relative w-full h-2 border border-gray-400 rounded-md">
+                {/* Track */}
+                <div className="absolute inset-0 bg-gray-200 rounded-md" />
+                {/* Range */}
+                <div
+                  className="absolute h-full bg-blue-500 rounded-md"
+                  style={{ width: `${(years - 1) * 10}%` }}
+                />
+                {/* Thumb */}
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border border-blue-500 rounded-full shadow"
+                  style={{ left: `${(years - 1) * 10}%` }}
+                />
+              </div>
+            </Slider>
           </div>
         </Card>
 

@@ -39,19 +39,24 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
   const navItems = [
     { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     { label: "Policy Overview", path: "/policy-overview", icon: FileText },
+    // {
+    //   label: "Investment",
+    //   path: "/investment",
+    //   icon: LineChart,
+    //   children: [
+    //     { label: "Stocks", path: "/investment/stocks", icon: TrendingUp },
+    //     {
+    //       label: "Mutual Funds",
+    //       path: "/investment/mutual-funds",
+    //       icon: PieChart,
+    //     },
+    //     { label: "FD", path: "/investment/fixed-deposit", icon: Banknote },
+    //   ],
+    // },
     {
-      label: "Investment",
+      label: "Investments",
       path: "/investment",
       icon: LineChart,
-      children: [
-        { label: "Stocks", path: "/investment/stocks", icon: TrendingUp },
-        {
-          label: "Mutual Funds",
-          path: "/investment/mutual-funds",
-          icon: PieChart,
-        },
-        { label: "FD", path: "/investment/fixed-deposit", icon: Banknote },
-      ],
     },
     {
       label: "ROI Calculator",
@@ -103,7 +108,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
                       )}
                     </Button>
 
-                    {investmentOpen && (
+                    {/* {investmentOpen && (
                       <div className="ml-6 mt-1 flex flex-col gap-1">
                         {item.children?.map((child) => (
                           <Button
@@ -121,7 +126,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
                           </Button>
                         ))}
                       </div>
-                    )}
+                    )} */}
                   </>
                 ) : (
                   <Button

@@ -5,8 +5,9 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   flexRender,
-} from '@tanstack/react-table';
-import type { ColumnDef } from '@tanstack/react-table';
+} from "@tanstack/react-table";
+import type { ColumnDef } from "@tanstack/react-table";
+
 import {
   Table,
   TableHeader,
@@ -14,11 +15,19 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from '@/components/ui/table';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
-import { ArrowUpDown } from 'lucide-react';
+} from "@/components/ui/table";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+} from "@/components/ui/pagination";
+
+import { useState } from "react";
+import { ArrowUpDown } from "lucide-react";
 
 interface DataTableProps<T> {
   data: T[];
@@ -26,7 +35,7 @@ interface DataTableProps<T> {
 }
 
 export function DataTable<T>({ data, columns }: DataTableProps<T>) {
-  const [globalFilter, setGlobalFilter] = useState('');
+  const [globalFilter, setGlobalFilter] = useState("");
   const [pagination, setPagination] = useState({
     pageIndex: 0,
     pageSize: 5,
@@ -51,31 +60,36 @@ export function DataTable<T>({ data, columns }: DataTableProps<T>) {
     <div>
       <Input
         placeholder="Search..."
-        value={globalFilter ?? ''}
+        value={globalFilter ?? ""}
         onChange={(e) => setGlobalFilter(e.target.value)}
         className="mb-4"
       />
 
       <Table>
         <TableHeader>
-        {table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
+              {headerGroup.headers.map((header) => (
                 <TableHead
-                key={header.id}
-                onClick={header.column.getToggleSortingHandler()}
-                className="cursor-pointer select-none"
+                  key={header.id}
+                  onClick={header.column.getToggleSortingHandler()}
+                  className="cursor-pointer select-none"
                 >
-                {header.isPlaceholder
+                  {header.isPlaceholder
                     ? null
-                    : flexRender(header.column.columnDef.header, header.getContext())}
-                {header.column.getIsSorted() === 'asc'  || header.column.getIsSorted() === 'desc' ? <ArrowUpDown size={10}/> : ''}
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                  {header.column.getIsSorted() === "asc" ||
+                  header.column.getIsSorted() === "desc" ? (
+                    <ArrowUpDown size={10} />
+                  ) : null}
                 </TableHead>
-            ))}
+              ))}
             </TableRow>
-        ))}
+          ))}
         </TableHeader>
-
 
         <TableBody>
           {table.getRowModel().rows.map((row) => (
@@ -90,21 +104,38 @@ export function DataTable<T>({ data, columns }: DataTableProps<T>) {
         </TableBody>
       </Table>
 
-      <div 
-        className="flex items-center justify-between mt-4">
-        <Button onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-            Previous
-        </Button>
+      <Pagination className="mt-4">
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious
+              onClick={() => table.previousPage()}
+              aria-disabled={!table.getCanPreviousPage()}
+              className={
+                !table.getCanPreviousPage()
+                  ? "pointer-events-none opacity-50"
+                  : ""
+              }
+            />
+          </PaginationItem>
 
-        <span className="text-sm">
-            Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
-        </span>
+          <PaginationItem>
+            <span className="text-sm px-2 py-1">
+              Page {table.getState().pagination.pageIndex + 1} of{" "}
+              {table.getPageCount()}
+            </span>
+          </PaginationItem>
 
-        <Button onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-            Next
-        </Button>
-      </div>
-
+          <PaginationItem>
+            <PaginationNext
+              onClick={() => table.nextPage()}
+              aria-disabled={!table.getCanNextPage()}
+              className={
+                !table.getCanNextPage() ? "pointer-events-none opacity-50" : ""
+              }
+            />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 }

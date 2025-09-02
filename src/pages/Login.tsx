@@ -14,12 +14,29 @@ import { Eye, EyeOff } from "lucide-react";
 import { loginSuccess } from "@/redux/service/authSlice";
 import { API_BASE_URL, APP_NAME } from "@/constants/appConstants";
 import { fetchInvestments } from "@/redux/service/investmentSlice";
-import { useAppDispatch } from '@/hooks/hooks';
+import { useAppDispatch } from "@/hooks/hooks";
 
+// const schema = yup.object().shape({
+//   username: yup.string().required("Username is required"),
+//   password: yup.string().required("Password is required"),
+// });
 
 const schema = yup.object().shape({
-  username: yup.string().required("Username is required"),
-  password: yup.string().required("Password is required"),
+  username: yup
+    .string()
+    .email("Enter a valid email address")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .required("Password is required")
+    .min(8, "Password must be at least 8 characters"),
+  // .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
+  // .matches(/[a-z]/, "Password must contain at least one lowercase letter")
+  // .matches(/[0-9]/, "Password must contain at least one number")
+  // .matches(
+  //   /[@$!%*?&]/,
+  //   "Password must contain at least one special character"
+  // ),
 });
 
 type FormData = {
