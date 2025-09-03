@@ -1,14 +1,23 @@
 import { Toaster } from "@/components/ui/sonner";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
 import Loader from "./components/Loader";
+import { useAppDispatch } from "./hooks/hooks";
+import { setupInterceptors } from "./axiosInstance";
 
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./components/ErrorFallback";
 
 function App() {
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+      setupInterceptors(dispatch);
+  }, [dispatch]);
+
   return (
     <Router>
       <ErrorBoundary
