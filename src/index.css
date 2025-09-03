@@ -1,4 +1,4 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -16,8 +16,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* --background: oklch(1 0 0);
+  --foreground: hsl(0.145 0 0); */
+  
+ --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -147,8 +151,13 @@ button:focus-visible {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+ 
+  /* --background: hsl(0.145 0 0);
+  --foreground: hsl(0.985 0 0); */
+  
+ --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -187,4 +196,4 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
-}
+}  
