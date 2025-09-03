@@ -17,6 +17,7 @@ import type { Policy } from "@/types/policy";
 
 import type { Column } from "@/components/GenericTable";
 import GenericTable from "@/components/GenericTable";
+import { Upload } from "lucide-react";
 
 const PolicyUpload = () => {
   const dispatch = useDispatch();
@@ -32,21 +33,6 @@ const PolicyUpload = () => {
     { label: "Premium", key: "premium" },
     { label: "Maturity Date", key: "maturityDate" },
   ];
-
-  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   const selected = event.target.files?.[0];
-  //   if (!selected) return;
-  //   setFile(selected);
-
-  //   Papa.parse<Policy>(selected, {
-  //     header: true,
-  //     skipEmptyLines: true,
-  //     complete: (results) => {
-  //       setParsedData(results.data);
-  //       setOpen(true);
-  //     },
-  //   });
-  // };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selected = event.target.files?.[0];
@@ -121,6 +107,15 @@ const PolicyUpload = () => {
     }
   };
 
+  const resetUploadState = () => {
+    setFile(null);
+    setParsedData([]);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+    setOpen(false);
+  };
+
   return (
     <div className="p-4 space-y-4">
       <label className="block">
@@ -148,8 +143,14 @@ const PolicyUpload = () => {
         </p>
       )}
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="w-full max-w-6xl p-2 space-y-4">
+      <Dialog
+        open={open}
+        onOpenChange={(isOpen) => {
+          setOpen(isOpen);
+          if (!isOpen) resetUploadState();
+        }}
+      >
+        <DialogContent className="inline-block w-auto p-2 space-y-4">
           <DialogHeader>
             <DialogTitle>Confirm Upload</DialogTitle>
             <DialogDescription>
@@ -158,13 +159,31 @@ const PolicyUpload = () => {
             </DialogDescription>
           </DialogHeader>
 
-          <GenericTable columns={columns} data={parsedData} pageSize={5} />
+          <GenericTable
+            columns={columns}
+            data={parsedData}
+            pageSize={5}
+            showSearch={false}
+            className="bg-white p-6 rounded-xl"
+            tableClassName="table-auto w-auto text-sm"
+            headerClassName="bg-gray-100"
+            rowClassName="hover:bg-gray-50"
+            cellClassName="text-gray-700"
+          />
 
           <DialogFooter className="mt-4">
-            <Button variant="outline" onClick={() => setOpen(false)}>
+            <Button variant="outline" onClick={resetUploadState}>
               Cancel
             </Button>
-            <Button onClick={handleConfirmUpload}>Confirm Upload</Button>
+            {/* <Button onClick={handleConfirmUpload}>Confirm Upload</Button> */}
+
+            <Button
+              onClick={handleConfirmUpload}
+              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800 flex items-center gap-2"
+            >
+              <Upload className="w-4 h-4" />
+              Confirm Upload
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
