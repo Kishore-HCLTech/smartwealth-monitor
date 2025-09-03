@@ -39,6 +39,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
   const navItems = [
     { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     { label: "Policy Overview", path: "/policy-overview", icon: FileText },
+    { label: "Policy Upload", path: "/policy", icon: FileText },
     // {
     //   label: "Investment",
     //   path: "/investment",

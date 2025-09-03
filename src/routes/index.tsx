@@ -18,6 +18,9 @@ const Stocks = lazy(() => import("@/pages/Stocks"));
 const MutualFunds = lazy(() => import("@/pages/MutualFunds"));
 const FixedDeposit = lazy(() => import("@/pages/FixedDeposit"));
 
+const PolicyUpload = lazy(() => import("@/pages/PolicyUpload"));
+const PolicyManager = lazy(() => import("@/pages/PolicyManager"));
+
 export const routes: RouteObject[] = [
   { path: "/", element: <Login /> },
   { path: "/login", element: <Login /> },
@@ -29,6 +32,7 @@ export const routes: RouteObject[] = [
       { path: "/home", element: <Home /> },
       { path: "/investment", element: <Investment /> },
       { path: "/policy-overview", element: <Policy /> },
+      { path: "/policy", element: <PolicyManager /> },
       { path: "/roi-calculator", element: <ROICalculator /> },
       { path: "/renewal-alert", element: <RenewalAlert /> },
       { path: "/investment/stocks", element: <Stocks /> },

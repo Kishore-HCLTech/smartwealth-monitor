@@ -257,6 +257,206 @@
       "renewalDate": "2026-04-05",
       "premium": 5688,
       "maturityDate": "2027-05-21"
+    },
+    {
+      "id": 26,
+      "name": "HDFC Life Protect Plus",
+      "type": "Health",
+      "renewalDate": "2026-01-29",
+      "premium": "8058",
+      "maturityDate": "2027-03-24"
+    },
+    {
+      "id": 27,
+      "name": "ICICI Health Shield",
+      "type": "Travel",
+      "renewalDate": "2025-10-29",
+      "premium": "6779",
+      "maturityDate": "2032-04-29"
+    },
+    {
+      "id": 28,
+      "name": "Tata AIG Auto Secure",
+      "type": "Life",
+      "renewalDate": "2026-01-07",
+      "premium": "14862",
+      "maturityDate": "2027-01-19"
+    },
+    {
+      "id": 29,
+      "name": "Max Bupa Health Companion",
+      "type": "Auto",
+      "renewalDate": "2026-03-20",
+      "premium": "7702",
+      "maturityDate": "2032-11-07"
+    },
+    {
+      "id": 30,
+      "name": "LIC Jeevan Anand",
+      "type": "Auto",
+      "renewalDate": "2025-10-10",
+      "premium": "11870",
+      "maturityDate": "2032-01-27"
+    },
+    {
+      "id": 31,
+      "name": "Bajaj Allianz Life Goal Assure",
+      "type": "Auto",
+      "renewalDate": "2025-12-08",
+      "premium": "10929",
+      "maturityDate": "2034-09-30"
+    },
+    {
+      "id": 32,
+      "name": "SBI Life Smart Shield",
+      "type": "Life",
+      "renewalDate": "2026-04-29",
+      "premium": "15932",
+      "maturityDate": "2027-12-04"
+    },
+    {
+      "id": 33,
+      "name": "Reliance Travel Care",
+      "type": "Travel",
+      "renewalDate": "2025-11-09",
+      "premium": "5941",
+      "maturityDate": "2026-12-15"
+    },
+    {
+      "id": 34,
+      "name": "Kotak Term Plan",
+      "type": "Auto",
+      "renewalDate": "2026-05-05",
+      "premium": "19522",
+      "maturityDate": "2029-05-19"
+    },
+    {
+      "id": 35,
+      "name": "Aditya Birla Sun Life Shield",
+      "type": "Auto",
+      "renewalDate": "2025-11-09",
+      "premium": "9199",
+      "maturityDate": "2029-01-27"
+    },
+    {
+      "id": 36,
+      "name": "Star Health Family Floater",
+      "type": "Travel",
+      "renewalDate": "2026-04-11",
+      "premium": "19276",
+      "maturityDate": "2035-01-03"
+    },
+    {
+      "id": 37,
+      "name": "Future Generali Auto Protect",
+      "type": "Health",
+      "renewalDate": "2026-07-02",
+      "premium": "11472",
+      "maturityDate": "2027-10-13"
+    },
+    {
+      "id": 38,
+      "name": "PNB MetLife Term Plan",
+      "type": "Life",
+      "renewalDate": "2026-02-03",
+      "premium": "10194",
+      "maturityDate": "2029-05-12"
+    },
+    {
+      "id": 39,
+      "name": "Canara HSBC OBC Life Secure",
+      "type": "Health",
+      "renewalDate": "2026-04-20",
+      "premium": "6762",
+      "maturityDate": "2033-07-13"
+    },
+    {
+      "id": 40,
+      "name": "Edelweiss Tokio Life Total Secure+",
+      "type": "Travel",
+      "renewalDate": "2025-11-25",
+      "premium": "14969",
+      "maturityDate": "2033-06-11"
+    },
+    {
+      "id": 41,
+      "name": "Aviva i-Life",
+      "type": "Health",
+      "renewalDate": "2026-03-27",
+      "premium": "10410",
+      "maturityDate": "2033-10-29"
+    },
+    {
+      "id": 42,
+      "name": "Bharti AXA Smart Health",
+      "type": "Health",
+      "renewalDate": "2025-12-27",
+      "premium": "14711",
+      "maturityDate": "2027-12-30"
+    },
+    {
+      "id": 43,
+      "name": "IFFCO Tokio Car Insurance",
+      "type": "Travel",
+      "renewalDate": "2026-04-17",
+      "premium": "18381",
+      "maturityDate": "2033-04-08"
+    },
+    {
+      "id": 44,
+      "name": "Shriram Life Secure",
+      "type": "Health",
+      "renewalDate": "2026-07-13",
+      "premium": "10157",
+      "maturityDate": "2031-08-25"
+    },
+    {
+      "id": 45,
+      "name": "Exide Life Elite Term",
+      "type": "Auto",
+      "renewalDate": "2025-09-30",
+      "premium": "7464",
+      "maturityDate": "2031-06-11"
+    },
+    {
+      "id": 46,
+      "name": "DHFL Pramerica Life Protect",
+      "type": "Auto",
+      "renewalDate": "2026-05-09",
+      "premium": "16872",
+      "maturityDate": "2031-12-29"
+    },
+    {
+      "id": 47,
+      "name": "IDBI Federal Life Insurance",
+      "type": "Auto",
+      "renewalDate": "2026-03-01",
+      "premium": "8788",
+      "maturityDate": "2027-06-19"
+    },
+    {
+      "id": 48,
+      "name": "IndiaFirst Life Plan",
+      "type": "Auto",
+      "renewalDate": "2026-05-21",
+      "premium": "13445",
+      "maturityDate": "2031-04-15"
+    },
+    {
+      "id": 49,
+      "name": "Sahara Life Suraksha",
+      "type": "Health",
+      "renewalDate": "2025-12-18",
+      "premium": "5619",
+      "maturityDate": "2027-05-12"
+    },
+    {
+      "id": 50,
+      "name": "AEGON Life iTerm Plus",
+      "type": "Health",
+      "renewalDate": "2026-04-05",
+      "premium": "5688",
+      "maturityDate": "2027-05-21"
     }
   ],
   "investments": [

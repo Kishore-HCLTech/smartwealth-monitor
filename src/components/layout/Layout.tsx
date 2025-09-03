@@ -13,6 +13,7 @@ const Layout = () => {
     "/home",
     "/dashboard",
     "/policy-overview",
+    "/policy",
     "/investment",
     "/roi-calculator",
     "/renewal-alert",
