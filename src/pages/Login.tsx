@@ -184,7 +184,6 @@ import { loginSuccess } from "@/redux/service/authSlice";
 import { useAppDispatch } from "@/hooks/hooks";
 import { API_BASE_URL, APP_NAME } from "@/constants/appConstants";
 import { fetchInvestments } from "@/redux/service/investmentSlice";
-import { useAppDispatch } from "@/hooks/hooks";
 import { userSchema } from "@/validation/userSchema";
 
 type FormData = {
