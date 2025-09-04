@@ -26,23 +26,10 @@ export const generatePDF = async ({ chartRef, data }: PDFExporterProps) => {
   const rupeeIcon = new Image();
   rupeeIcon.src = "/assets/indian-rupee.png";
 
-  
-    
     const doc = new jsPDF();
 
     doc.setFontSize(16);
     doc.text("ROI Calculator Report", 20, 20);
-
-    // doc.setFontSize(12);
-    // doc.text(`Category: ${category}`, 20, 30);
-    // doc.text(`Initial Investment: Rs. ${initial}`, 20, 40);
-    // doc.text(`Final Amount: Rs. ${final}`, 20, 50);
-    // doc.text(`Investment Period: ${years} years`, 20, 60);
-    // doc.text(`Total Gain: Rs. ${final! - initial!}`, 20, 70);
-    // doc.text(`Return on Investment (ROI): ${roi.toFixed(2)}%`, 20, 80);
-    // doc.text(`Simple Annual ROI: ${simpleAnnualROI.toFixed(2)}%`, 20, 90);
-    // doc.text(`CAGR: ${cagr.toFixed(2)}%`, 20, 100);
-    // Table data
   autoTable(doc, {
     startY: 30,
     head: [["Metric", "Value"]],
@@ -77,29 +64,4 @@ export const generatePDF = async ({ chartRef, data }: PDFExporterProps) => {
       doc.save("roi_report.pdf");
   };
 
-
-//   function autoTable(
-//     doc: jsPDF,
-//     options: {
-//       startY: number;
-//       head: string[][];
-//       body: string[][];
-//       theme: string;
-//       styles: { fontSize: number };
-//       headStyles: { fillColor: number[] };
-//     }
-//   ) {
-//     // @ts-ignore
-//     doc.autoTable({
-//       startY: options.startY,
-//       head: options.head,
-//       body: options.body,
-//       theme: options.theme,
-//       styles: options.styles,
-//       headStyles: options.headStyles,
-//     });
-//   }
-// function autoTable(doc: jsPDF, arg1: { startY: number; head: string[][]; body: string[][]; theme: string; styles: { fontSize: number; }; headStyles: { fillColor: number[]; }; }) {
-//   throw new Error("Function not implemented.");
-// }
 

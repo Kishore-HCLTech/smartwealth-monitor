@@ -4,16 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import {
-  Calculator,
-  FileText,
-  LayoutDashboard,
-  LineChart,
-  BellRing,
-  ChevronDown,
-  ChevronRight,
-  Menu,
-} from "lucide-react";
+import {Calculator,FileText,LayoutDashboard,LineChart,BellRing, Menu,} from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/service/authSlice";
 import type { RootState } from "../../redux/store";
@@ -37,20 +28,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
     { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     // { label: "Policy Overview", path: "/policy-overview", icon: FileText },
     { label: "Policy", path: "/policy", icon: FileText },
-    // {
-    //   label: "Investment",
-    //   path: "/investment",
-    //   icon: LineChart,
-    //   children: [
-    //     { label: "Stocks", path: "/investment/stocks", icon: TrendingUp },
-    //     {
-    //       label: "Mutual Funds",
-    //       path: "/investment/mutual-funds",
-    //       icon: PieChart,
-    //     },
-    //     { label: "FD", path: "/investment/fixed-deposit", icon: Banknote },
-    //   ],
-    // },
+ 
     {
       label: "Investments",
       path: "/investment",
