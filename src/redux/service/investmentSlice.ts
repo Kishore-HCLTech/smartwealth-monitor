@@ -35,11 +35,17 @@ const investmentSlice = createSlice({
         state.status = "succeeded";
         state.data = action.payload;
       })
+      .addCase(fetchInvestments.rejected, (state) => {
+        state.status = "failed";
+      })
       .addCase(postInvestment.pending, (state) => {
         state.status = "loading";
       })
       .addCase(postInvestment.fulfilled, (state, action) => {
         state.data.push(action.payload);
+      })
+      .addCase(postInvestment.rejected, (state) => {
+        state.status = "failed";
       });
   },
 });

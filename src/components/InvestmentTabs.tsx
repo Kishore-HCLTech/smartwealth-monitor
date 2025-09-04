@@ -16,27 +16,39 @@ export function InvestmentTabs() {
 
   const {loading} = useAppSelector((state) => state.loading);
 
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
 
-    Papa.parse(file, {
-      header: true,
-      skipEmptyLines: true,
-      complete: async (results) => {
-        try {
-          for (const item of results.data as any[]) {
-            dispatch(postInvestment(item))
+  Papa.parse(file, {
+    header: true,
+    skipEmptyLines: true,
+    complete: async (results) => {
+      try {
+        let allSuccessful = true;
+
+        for (const item of results.data as any[]) {
+          const response = await dispatch(postInvestment(item));
+
+          if (response.meta.requestStatus !== "fulfilled") {
+            allSuccessful = false;
           }
+        }
+
+        if (allSuccessful) {
           toast.success("Data uploaded successfully!");
           dispatch(fetchInvestments());
-        } catch (error) {
-          console.error("Upload failed:", error);
-          alert("Upload failed!");
+        } else {
+          toast.error("Some data failed to upload.");
         }
-      },
-    });
-  };
+
+      } catch (error) {
+        toast.error("Data upload failed!");
+      }
+    },
+  });
+};
+
 
   return (
     <>
