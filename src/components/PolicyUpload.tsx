@@ -86,9 +86,15 @@ const PolicyUpload = () => {
         id: maxId + index + 1,
       }));
 
-      for (const policy of policiesWithId) {
-        await axios.post("http://localhost:3001/policies", policy);
-      }
+      // for (const policy of policiesWithId) {
+      //   await axios.post("http://localhost:3001/policies", policy);
+      // }
+
+      await Promise.all(
+        policiesWithId.map((policy) =>
+          axios.post("http://localhost:3001/policies", policy)
+        )
+      );
 
       const updated = await axios.get("http://localhost:3001/policies");
       dispatch(setPolicies(updated.data));

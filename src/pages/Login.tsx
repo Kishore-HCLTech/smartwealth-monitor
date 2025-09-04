@@ -175,7 +175,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -185,17 +184,8 @@ import { loginSuccess } from "@/redux/service/authSlice";
 import { useAppDispatch } from "@/hooks/hooks";
 import { API_BASE_URL, APP_NAME } from "@/constants/appConstants";
 import { fetchInvestments } from "@/redux/service/investmentSlice";
-
-const schema = yup.object().shape({
-  username: yup
-    .string()
-    .email("Enter a valid email address")
-    .required("Email is required"),
-  password: yup
-    .string()
-    .required("Password is required")
-    .min(8, "Password must be at least 8 characters"),
-});
+import { useAppDispatch } from "@/hooks/hooks";
+import { userSchema } from "@/validation/userSchema";
 
 type FormData = {
   username: string;
@@ -214,7 +204,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(userSchema),
   });
 
   const onSubmit = async (data: FormData) => {
