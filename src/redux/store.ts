@@ -3,6 +3,7 @@ import policyReducer from "./service/policySlice";
 import investmentReducer from "./service/investmentSlice";
 import authReducer from "./service/authSlice";
 import policyDataReducer from "./service/policyDataSlice";
+import loadingReducer from './service/loadingSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     investments: investmentReducer,
     auth: authReducer,
     policyData: policyDataReducer,
+    loading: loadingReducer,
   },
 });
 

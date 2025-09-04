@@ -12,9 +12,10 @@ import { useNavigate } from "react-router-dom";
 
 import { Eye, EyeOff } from "lucide-react";
 import { loginSuccess } from "@/redux/service/authSlice";
-import { API_BASE_URL, APP_NAME } from "@/constants/appConstants";
+import {  APP_NAME } from "@/constants/appConstants";
 import { fetchInvestments } from "@/redux/service/investmentSlice";
 import { useAppDispatch } from "@/hooks/hooks";
+import axiosInstance from "@/axiosInstance";
 import { userSchema } from "@/validation/userSchema";
 
 type FormData = {
@@ -39,7 +40,7 @@ const Login = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/users`, {
+      const res = await axiosInstance.get(`/users`, {
         params: {
           email: data.username,
           password: data.password,

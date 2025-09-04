@@ -1,10 +1,11 @@
 import { DataTable } from '@/components/DataTable';
 import { useFilteredTableData } from '@/hooks/useFilteredTableData';
+import { Loader } from 'lucide-react';
 
 const MutualFunds = () => {
   const { filteredData, columns, loading } = useFilteredTableData("Mutual Fund");
 
-  if (loading) return <div className="p-6">Loading...</div>;
+  if (loading) return <Loader />;
 
   return (
     <div className="p-6">

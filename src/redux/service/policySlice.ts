@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import type { Policy } from "@/types/policy";
+import axiosInstance from "@/axiosInstance";
 
 interface PolicyState {
   data: Policy[];
@@ -22,8 +22,8 @@ export const fetchPolicies = createAsyncThunk<
   { rejectValue: string }
 >("policies/fetchPolicies", async ({ page, limit }, thunkAPI) => {
   try {
-    const response = await axios.get(
-      `http://localhost:3001/policies?_page=${page}&_limit=${limit}`
+    const response = await axiosInstance.get(
+      `/policies?_page=${page}&_limit=${limit}`
     );
 
     // Log headers for debugging

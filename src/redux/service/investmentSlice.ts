@@ -1,19 +1,30 @@
+import axiosInstance from "@/axiosInstance";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
-export const fetchInvestments = createAsyncThunk(
+export type Investment = Record<string, any>;
+
+export const fetchInvestments = createAsyncThunk<Investment[]>(
   "investments/fetchInvestments",
   async () => {
-    const res = await axios.get(
-      `http://localhost:3001/investments`
-    );
+    const res = await axiosInstance.get(`/investments`);
+    return res.data;
+  }
+);
+
+export const postInvestment = createAsyncThunk<Investment, Investment>(
+  "investments/postInvestment",
+  async (investmentData) => {
+    const res = await axiosInstance.post(`/investments`, investmentData);
     return res.data;
   }
 );
 
 const investmentSlice = createSlice({
   name: "investments",
-  initialState: { data: [], status: "idle" },
+  initialState: {
+    data: [] as Investment[],
+    status: "idle",
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -23,6 +34,18 @@ const investmentSlice = createSlice({
       .addCase(fetchInvestments.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.data = action.payload;
+      })
+      .addCase(fetchInvestments.rejected, (state) => {
+        state.status = "failed";
+      })
+      .addCase(postInvestment.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(postInvestment.fulfilled, (state, action) => {
+        state.data.push(action.payload);
+      })
+      .addCase(postInvestment.rejected, (state) => {
+        state.status = "failed";
       });
   },
 });
