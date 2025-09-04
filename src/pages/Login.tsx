@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import axios from "axios";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -40,7 +42,7 @@ const Login = () => {
     try {
       const res = await axiosInstance.get(`/users`, {
         params: {
-          username: data.username,
+          email: data.username,
           password: data.password,
         },
       });
