@@ -45,7 +45,6 @@ const PolicyUpload = () => {
       complete: (results) => {
         const parsed = results.data;
 
-        // Validate keys
         const requiredKeys = [
           "id",
           "name",
@@ -86,10 +85,6 @@ const PolicyUpload = () => {
         id: maxId + index + 1,
       }));
 
-      // for (const policy of policiesWithId) {
-      //   await axios.post("http://localhost:3001/policies", policy);
-      // }
-
       await Promise.all(
         policiesWithId.map((policy) =>
           axios.post("http://localhost:3001/policies", policy)
@@ -101,7 +96,6 @@ const PolicyUpload = () => {
 
       toast.success("Policies uploaded successfully!");
 
-      // Reset file input and state
       setFile(null);
       setParsedData([]);
       setOpen(false);
@@ -162,6 +156,11 @@ const PolicyUpload = () => {
             <DialogDescription>
               You're about to upload <strong>{parsedData.length}</strong>{" "}
               policies.
+              <br />
+              <span className="text-sm text-gray-600">
+                File: <strong>{file?.name}</strong> (
+                {(file?.size! / 1024).toFixed(2)} KB)
+              </span>
             </DialogDescription>
           </DialogHeader>
 
@@ -181,8 +180,6 @@ const PolicyUpload = () => {
             <Button variant="outline" onClick={resetUploadState}>
               Cancel
             </Button>
-            {/* <Button onClick={handleConfirmUpload}>Confirm Upload</Button> */}
-
             <Button
               onClick={handleConfirmUpload}
               className="bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800 flex items-center gap-2"
