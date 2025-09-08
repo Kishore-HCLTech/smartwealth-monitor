@@ -32,7 +32,7 @@ type GenericTableProps<T extends { id: number }> = {
   className?: string;
   tableClassName?: string;
   headerClassName?: string;
-  rowClassName?: string;
+  rowClassName?: ((row: T, index: number) => string) | string;
   cellClassName?: string;
 };
 
@@ -138,25 +138,32 @@ function GenericTable<T extends { id: number }>({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {paginatedData.map((row, index) => (
-              <TableRow
-                key={row.id}
-                className={`border-t hover:bg-muted/50 transition-colors ${
-                  index % 2 === 0 ? "bg-muted/20" : ""
-                } ${rowClassName ?? ""}`}
-              >
-                {columns.map((col) => (
-                  <TableCell
-                    key={String(col.key)}
-                    className={`p-2 ${cellClassName ?? ""}`}
-                  >
-                    {col.render
-                      ? col.render(row[col.key], row)
-                      : String(row[col.key] ?? "")}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
+            {paginatedData.map((row, index) => {
+              const computedRowClass =
+                typeof rowClassName === "function"
+                  ? rowClassName(row, index)
+                  : rowClassName ?? "";
+
+              return (
+                <TableRow
+                  key={row.id}
+                  className={`border-t hover:bg-muted/50 transition-colors ${
+                    index % 2 === 0 ? "bg-muted/20" : ""
+                  } ${computedRowClass}`}
+                >
+                  {columns.map((col) => (
+                    <TableCell
+                      key={String(col.key)}
+                      className={`p-2 ${cellClassName ?? ""}`}
+                    >
+                      {col.render
+                        ? col.render(row[col.key], row)
+                        : String(row[col.key] ?? "")}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </div>

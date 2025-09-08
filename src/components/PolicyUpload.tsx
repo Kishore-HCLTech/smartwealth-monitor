@@ -23,10 +23,23 @@ const PolicyUpload = () => {
   const dispatch = useDispatch();
   const [file, setFile] = useState<File | null>(null);
   const [parsedData, setParsedData] = useState<Policy[]>([]);
+  const [invalidRows, setInvalidRows] = useState<
+    { index: number; missingFields: string[] }[]
+  >([]);
   const [open, setOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const expectedHeaders = [
+    "id",
+    "name",
+    "type",
+    "renewalDate",
+    "premium",
+    "maturityDate",
+  ];
+
   const columns: Column<Policy>[] = [
+    { label: "ID", key: "id" },
     { label: "Name", key: "name" },
     { label: "Type", key: "type" },
     { label: "Renewal Date", key: "renewalDate" },
@@ -44,22 +57,14 @@ const PolicyUpload = () => {
       skipEmptyLines: true,
       complete: (results) => {
         const parsed = results.data;
+        const actualHeaders = results.meta.fields ?? [];
 
-        const requiredKeys = [
-          "id",
-          "name",
-          "type",
-          "renewalDate",
-          "premium",
-          "maturityDate",
-        ];
-        const isValid = parsed.every((row) =>
-          requiredKeys.every((key) =>
-            Object.prototype.hasOwnProperty.call(row, key)
-          )
-        );
+        // Step 1: Validate header format
+        const isHeaderValid =
+          expectedHeaders.length === actualHeaders.length &&
+          expectedHeaders.every((key, i) => key === actualHeaders[i]);
 
-        if (!isValid) {
+        if (!isHeaderValid) {
           toast.error(
             "Invalid CSV format. Please use the correct policy structure."
           );
@@ -68,6 +73,27 @@ const PolicyUpload = () => {
           return;
         }
 
+        // Step 2: Validate missing values
+        const invalids: { index: number; missingFields: string[] }[] = [];
+
+        parsed.forEach((row, index) => {
+          const missingFields = expectedHeaders.filter((key) => {
+            const value = row[key as keyof Policy];
+            return !value || value.toString().trim() === "";
+          });
+
+          if (missingFields.length > 0) {
+            invalids.push({ index, missingFields });
+          }
+        });
+
+        if (invalids.length > 0) {
+          toast.error(
+            `Found ${invalids.length} invalid row(s) with missing fields. Please review before uploading.`
+          );
+        }
+
+        setInvalidRows(invalids);
         setParsedData(parsed);
         setOpen(true);
       },
@@ -95,13 +121,7 @@ const PolicyUpload = () => {
       dispatch(setPolicies(updated.data));
 
       toast.success("Policies uploaded successfully!");
-
-      setFile(null);
-      setParsedData([]);
-      setOpen(false);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
+      resetUploadState();
     } catch (error) {
       toast.error("Upload failed. Please try again.");
     }
@@ -110,6 +130,7 @@ const PolicyUpload = () => {
   const resetUploadState = () => {
     setFile(null);
     setParsedData([]);
+    setInvalidRows([]);
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -172,9 +193,25 @@ const PolicyUpload = () => {
             className="bg-white p-6 rounded-xl"
             tableClassName="table-auto w-auto text-sm"
             headerClassName="bg-gray-100"
-            rowClassName="hover:bg-gray-50"
+            rowClassName={(row, index) =>
+              invalidRows.some((r) => r.index === index)
+                ? "bg-red-50 hover:bg-red-100"
+                : "hover:bg-gray-50"
+            }
             cellClassName="text-gray-700"
           />
+
+          {invalidRows.length > 0 && (
+            <div className="text-sm text-red-600 space-y-1">
+              <p className="font-semibold">Issues found:</p>
+              {invalidRows.map((row) => (
+                <p key={row.index}>
+                  Row {row.index + 1}: Missing {row.missingFields.join(", ")}
+                </p>
+              ))}
+              {/* <p className="font-semibold">{`Please review before uploading.`}</p> */}
+            </div>
+          )}
 
           <DialogFooter className="mt-4">
             <Button variant="outline" onClick={resetUploadState}>
@@ -182,7 +219,10 @@ const PolicyUpload = () => {
             </Button>
             <Button
               onClick={handleConfirmUpload}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800 flex items-center gap-2"
+              disabled={invalidRows.length > 0}
+              className={`bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800 flex items-center gap-2 ${
+                invalidRows.length > 0 ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
               <Upload className="w-4 h-4" />
               Confirm Upload
