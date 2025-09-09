@@ -11,7 +11,7 @@
     {
       "id": "2",
       "email": "admin@bank.com",
-      "password": "admin_hashed_pw",
+      "password": "admin_hashed_pw_123",
       "name": "Admin User",
       "role": "admin",
       "status": "active"
@@ -19,7 +19,7 @@
     {
       "id": "3",
       "email": "krishna@example.com",
-      "password": "new_hashed_password",
+      "password": "new_hashed_password_123",
       "name": "Krishna",
       "role": "client",
       "status": "active"
@@ -27,7 +27,7 @@
     {
       "id": "4",
       "email": "raju@example.com",
-      "password": "hashed_pw_raju",
+      "password": "hashed_pw_raju_123",
       "name": "Raju",
       "role": "client",
       "status": "active"
@@ -35,7 +35,7 @@
     {
       "id": "5",
       "email": "rahul@example.com",
-      "password": "hashed_pw_rahul",
+      "password": "hashed_pw_rahul_123",
       "name": "Rahul Verma",
       "role": "client",
       "status": "active"
@@ -43,7 +43,7 @@
     {
       "id": "6",
       "email": "mudit@example.com",
-      "password": "hashed_pw_mudit",
+      "password": "hashed_pw_mudit_123",
       "name": "Mudit",
       "role": "client",
       "status": "active"
@@ -51,7 +51,7 @@
     {
       "id": "7",
       "email": "yamuna@example.com",
-      "password": "hashed_pw_yamuna",
+      "password": "hashed_pw_yamuna_123",
       "name": "Yamuna",
       "role": "client",
       "status": "active"
@@ -59,7 +59,7 @@
   ],
   "policies": [
     {
-      "id": 1,
+      "id": "1",
       "name": "HDFC Life Protect Plus",
       "type": "Health",
       "renewalDate": "2026-01-29",
@@ -67,7 +67,7 @@
       "maturityDate": "2027-03-24"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "ICICI Health Shield",
       "type": "Travel",
       "renewalDate": "2025-10-29",
@@ -75,7 +75,7 @@
       "maturityDate": "2032-04-29"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Tata AIG Auto Secure",
       "type": "Life",
       "renewalDate": "2026-01-07",
@@ -83,7 +83,7 @@
       "maturityDate": "2027-01-19"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Max Bupa Health Companion",
       "type": "Auto",
       "renewalDate": "2026-03-20",
@@ -91,7 +91,7 @@
       "maturityDate": "2032-11-07"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "LIC Jeevan Anand",
       "type": "Auto",
       "renewalDate": "2025-10-10",
@@ -99,7 +99,7 @@
       "maturityDate": "2032-01-27"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Bajaj Allianz Life Goal Assure",
       "type": "Auto",
       "renewalDate": "2025-12-08",
@@ -107,7 +107,7 @@
       "maturityDate": "2034-09-30"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "SBI Life Smart Shield",
       "type": "Life",
       "renewalDate": "2026-04-29",
@@ -115,7 +115,7 @@
       "maturityDate": "2027-12-04"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Reliance Travel Care",
       "type": "Travel",
       "renewalDate": "2025-11-09",
@@ -123,7 +123,7 @@
       "maturityDate": "2026-12-15"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Kotak Term Plan",
       "type": "Auto",
       "renewalDate": "2026-05-05",
@@ -131,7 +131,7 @@
       "maturityDate": "2029-05-19"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Aditya Birla Sun Life Shield",
       "type": "Auto",
       "renewalDate": "2025-11-09",
@@ -139,7 +139,7 @@
       "maturityDate": "2029-01-27"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Star Health Family Floater",
       "type": "Travel",
       "renewalDate": "2026-04-11",
@@ -147,7 +147,7 @@
       "maturityDate": "2035-01-03"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Future Generali Auto Protect",
       "type": "Health",
       "renewalDate": "2026-07-02",
@@ -155,7 +155,7 @@
       "maturityDate": "2027-10-13"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "PNB MetLife Term Plan",
       "type": "Life",
       "renewalDate": "2026-02-03",
@@ -163,7 +163,7 @@
       "maturityDate": "2029-05-12"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Canara HSBC OBC Life Secure",
       "type": "Health",
       "renewalDate": "2026-04-20",
@@ -171,7 +171,7 @@
       "maturityDate": "2033-07-13"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Edelweiss Tokio Life Total Secure+",
       "type": "Travel",
       "renewalDate": "2025-11-25",
@@ -179,7 +179,7 @@
       "maturityDate": "2033-06-11"
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Aviva i-Life",
       "type": "Health",
       "renewalDate": "2026-03-27",
@@ -187,7 +187,7 @@
       "maturityDate": "2033-10-29"
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Bharti AXA Smart Health",
       "type": "Health",
       "renewalDate": "2025-12-27",
@@ -195,7 +195,7 @@
       "maturityDate": "2027-12-30"
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "IFFCO Tokio Car Insurance",
       "type": "Travel",
       "renewalDate": "2026-04-17",
@@ -203,7 +203,7 @@
       "maturityDate": "2033-04-08"
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Shriram Life Secure",
       "type": "Health",
       "renewalDate": "2026-07-13",
@@ -211,7 +211,7 @@
       "maturityDate": "2031-08-25"
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Exide Life Elite Term",
       "type": "Auto",
       "renewalDate": "2025-09-30",
@@ -219,7 +219,7 @@
       "maturityDate": "2031-06-11"
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "DHFL Pramerica Life Protect",
       "type": "Auto",
       "renewalDate": "2026-05-09",
@@ -227,7 +227,7 @@
       "maturityDate": "2031-12-29"
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "IDBI Federal Life Insurance",
       "type": "Auto",
       "renewalDate": "2026-03-01",
@@ -235,7 +235,7 @@
       "maturityDate": "2027-06-19"
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "IndiaFirst Life Plan",
       "type": "Auto",
       "renewalDate": "2026-05-21",
@@ -243,7 +243,7 @@
       "maturityDate": "2031-04-15"
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Sahara Life Suraksha",
       "type": "Health",
       "renewalDate": "2025-12-18",
@@ -251,264 +251,704 @@
       "maturityDate": "2027-05-12"
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "AEGON Life iTerm Plus",
       "type": "Health",
       "renewalDate": "2026-04-05",
       "premium": 5688,
       "maturityDate": "2027-05-21"
+    },
+    {
+      "id": 26,
+      "name": "HDFC Life Protect Plus",
+      "type": "Health",
+      "renewalDate": "2026-01-29",
+      "premium": "8058",
+      "maturityDate": "2027-03-24"
+    },
+    {
+      "id": 31,
+      "name": "Bajaj Allianz Life Goal Assure",
+      "type": "Auto",
+      "renewalDate": "2025-12-08",
+      "premium": "10929",
+      "maturityDate": "2034-09-30"
+    },
+    {
+      "id": 32,
+      "name": "SBI Life Smart Shield",
+      "type": "Life",
+      "renewalDate": "2026-04-29",
+      "premium": "15932",
+      "maturityDate": "2027-12-04"
+    },
+    {
+      "id": 33,
+      "name": "Reliance Travel Care",
+      "type": "Travel",
+      "renewalDate": "2025-11-09",
+      "premium": "5941",
+      "maturityDate": "2026-12-15"
+    },
+    {
+      "id": 34,
+      "name": "Kotak Term Plan",
+      "type": "Auto",
+      "renewalDate": "2026-05-05",
+      "premium": "19522",
+      "maturityDate": "2029-05-19"
+    },
+    {
+      "id": 35,
+      "name": "Aditya Birla Sun Life Shield",
+      "type": "Auto",
+      "renewalDate": "2025-11-09",
+      "premium": "9199",
+      "maturityDate": "2029-01-27"
+    },
+    {
+      "id": 36,
+      "name": "Star Health Family Floater",
+      "type": "Travel",
+      "renewalDate": "2026-04-11",
+      "premium": "19276",
+      "maturityDate": "2035-01-03"
+    },
+    {
+      "id": 37,
+      "name": "Future Generali Auto Protect",
+      "type": "Health",
+      "renewalDate": "2026-07-02",
+      "premium": "11472",
+      "maturityDate": "2027-10-13"
+    },
+    {
+      "id": 38,
+      "name": "PNB MetLife Term Plan",
+      "type": "Life",
+      "renewalDate": "2026-02-03",
+      "premium": "10194",
+      "maturityDate": "2029-05-12"
+    },
+    {
+      "id": 39,
+      "name": "Canara HSBC OBC Life Secure",
+      "type": "Health",
+      "renewalDate": "2026-04-20",
+      "premium": "6762",
+      "maturityDate": "2033-07-13"
+    },
+    {
+      "id": 40,
+      "name": "Edelweiss Tokio Life Total Secure+",
+      "type": "Travel",
+      "renewalDate": "2025-11-25",
+      "premium": "14969",
+      "maturityDate": "2033-06-11"
+    },
+    {
+      "id": 41,
+      "name": "Aviva i-Life",
+      "type": "Health",
+      "renewalDate": "2026-03-27",
+      "premium": "10410",
+      "maturityDate": "2033-10-29"
+    },
+    {
+      "id": 42,
+      "name": "Bharti AXA Smart Health",
+      "type": "Health",
+      "renewalDate": "2025-12-27",
+      "premium": "14711",
+      "maturityDate": "2027-12-30"
+    },
+    {
+      "id": 43,
+      "name": "IFFCO Tokio Car Insurance",
+      "type": "Travel",
+      "renewalDate": "2026-04-17",
+      "premium": "18381",
+      "maturityDate": "2033-04-08"
+    },
+    {
+      "id": 44,
+      "name": "Shriram Life Secure",
+      "type": "Health",
+      "renewalDate": "2026-07-13",
+      "premium": "10157",
+      "maturityDate": "2031-08-25"
+    },
+    {
+      "id": 45,
+      "name": "Exide Life Elite Term",
+      "type": "Auto",
+      "renewalDate": "2025-09-30",
+      "premium": "7464",
+      "maturityDate": "2031-06-11"
+    },
+    {
+      "id": 46,
+      "name": "DHFL Pramerica Life Protect",
+      "type": "Auto",
+      "renewalDate": "2026-05-09",
+      "premium": "16872",
+      "maturityDate": "2031-12-29"
+    },
+    {
+      "id": 47,
+      "name": "IDBI Federal Life Insurance",
+      "type": "Auto",
+      "renewalDate": "2026-03-01",
+      "premium": "8788",
+      "maturityDate": "2027-06-19"
+    },
+    {
+      "id": 48,
+      "name": "IndiaFirst Life Plan",
+      "type": "Auto",
+      "renewalDate": "2026-05-21",
+      "premium": "13445",
+      "maturityDate": "2031-04-15"
+    },
+    {
+      "id": 28,
+      "name": "Tata AIG Auto Secure",
+      "type": "Life",
+      "renewalDate": "2026-01-07",
+      "premium": "14862",
+      "maturityDate": "2027-01-19"
+    },
+    {
+      "id": 49,
+      "name": "Sahara Life Suraksha",
+      "type": "Health",
+      "renewalDate": "2025-12-18",
+      "premium": "5619",
+      "maturityDate": "2027-05-12"
+    },
+    {
+      "id": 50,
+      "name": "AEGON Life iTerm Plus",
+      "type": "Health",
+      "renewalDate": "2026-04-05",
+      "premium": "5688",
+      "maturityDate": "2027-05-21"
+    },
+    {
+      "id": 27,
+      "name": "ICICI Health Shield",
+      "type": "Travel",
+      "renewalDate": "2025-10-29",
+      "premium": "6779",
+      "maturityDate": "2032-04-29"
+    },
+    {
+      "id": 29,
+      "name": "Max Bupa Health Companion",
+      "type": "Auto",
+      "renewalDate": "2026-03-20",
+      "premium": "7702",
+      "maturityDate": "2032-11-07"
+    },
+    {
+      "id": 30,
+      "name": "LIC Jeevan Anand",
+      "type": "Auto",
+      "renewalDate": "2025-10-10",
+      "premium": "11870",
+      "maturityDate": "2032-01-27"
+    },
+    {
+      "id": 51,
+      "name": "HDFC Life Protect Plus",
+      "type": "Health",
+      "renewalDate": "2026-01-29",
+      "premium": "8058",
+      "maturityDate": "2027-03-24"
+    },
+    {
+      "id": 57,
+      "name": "SBI Life Smart Shield",
+      "type": "Life",
+      "renewalDate": "2026-04-29",
+      "premium": "15932",
+      "maturityDate": "2027-12-04"
+    },
+    {
+      "id": 58,
+      "name": "Reliance Travel Care",
+      "type": "Travel",
+      "renewalDate": "2025-11-09",
+      "premium": "5941",
+      "maturityDate": "2026-12-15"
+    },
+    {
+      "id": 59,
+      "name": "Kotak Term Plan",
+      "type": "Auto",
+      "renewalDate": "2026-05-05",
+      "premium": "19522",
+      "maturityDate": "2029-05-19"
+    },
+    {
+      "id": 60,
+      "name": "Aditya Birla Sun Life Shield",
+      "type": "Auto",
+      "renewalDate": "2025-11-09",
+      "premium": "9199",
+      "maturityDate": "2029-01-27"
+    },
+    {
+      "id": 61,
+      "name": "Star Health Family Floater",
+      "type": "Travel",
+      "renewalDate": "2026-04-11",
+      "premium": "19276",
+      "maturityDate": "2035-01-03"
+    },
+    {
+      "id": 62,
+      "name": "Future Generali Auto Protect",
+      "type": "Health",
+      "renewalDate": "2026-07-02",
+      "premium": "11472",
+      "maturityDate": "2027-10-13"
+    },
+    {
+      "id": 52,
+      "name": "ICICI Health Shield",
+      "type": "Travel",
+      "renewalDate": "2025-10-29",
+      "premium": "6779",
+      "maturityDate": "2032-04-29"
+    },
+    {
+      "id": 63,
+      "name": "PNB MetLife Term Plan",
+      "type": "Life",
+      "renewalDate": "2026-02-03",
+      "premium": "10194",
+      "maturityDate": "2029-05-12"
+    },
+    {
+      "id": 64,
+      "name": "Canara HSBC OBC Life Secure",
+      "type": "Health",
+      "renewalDate": "2026-04-20",
+      "premium": "6762",
+      "maturityDate": "2033-07-13"
+    },
+    {
+      "id": 65,
+      "name": "Edelweiss Tokio Life Total Secure+",
+      "type": "Travel",
+      "renewalDate": "2025-11-25",
+      "premium": "14969",
+      "maturityDate": "2033-06-11"
+    },
+    {
+      "id": 66,
+      "name": "Aviva i-Life",
+      "type": "Health",
+      "renewalDate": "2026-03-27",
+      "premium": "10410",
+      "maturityDate": "2033-10-29"
+    },
+    {
+      "id": 53,
+      "name": "Tata AIG Auto Secure",
+      "type": "Life",
+      "renewalDate": "2026-01-07",
+      "premium": "14862",
+      "maturityDate": "2027-01-19"
+    },
+    {
+      "id": 67,
+      "name": "Bharti AXA Smart Health",
+      "type": "Health",
+      "renewalDate": "2025-12-27",
+      "premium": "14711",
+      "maturityDate": "2027-12-30"
+    },
+    {
+      "id": 68,
+      "name": "IFFCO Tokio Car Insurance",
+      "type": "Travel",
+      "renewalDate": "2026-04-17",
+      "premium": "18381",
+      "maturityDate": "2033-04-08"
+    },
+    {
+      "id": 54,
+      "name": "Max Bupa Health Companion",
+      "type": "Auto",
+      "renewalDate": "2026-03-20",
+      "premium": "7702",
+      "maturityDate": "2032-11-07"
+    },
+    {
+      "id": 69,
+      "name": "Shriram Life Secure",
+      "type": "Health",
+      "renewalDate": "2026-07-13",
+      "premium": "10157",
+      "maturityDate": "2031-08-25"
+    },
+    {
+      "id": 70,
+      "name": "Exide Life Elite Term",
+      "type": "Auto",
+      "renewalDate": "2025-09-30",
+      "premium": "7464",
+      "maturityDate": "2031-06-11"
+    },
+    {
+      "id": 55,
+      "name": "LIC Jeevan Anand",
+      "type": "Auto",
+      "renewalDate": "2025-10-10",
+      "premium": "11870",
+      "maturityDate": "2032-01-27"
+    },
+    {
+      "id": 71,
+      "name": "DHFL Pramerica Life Protect",
+      "type": "Auto",
+      "renewalDate": "2026-05-09",
+      "premium": "16872",
+      "maturityDate": "2031-12-29"
+    },
+    {
+      "id": 56,
+      "name": "Bajaj Allianz Life Goal Assure",
+      "type": "Auto",
+      "renewalDate": "2025-12-08",
+      "premium": "10929",
+      "maturityDate": "2034-09-30"
+    },
+    {
+      "id": 72,
+      "name": "IDBI Federal Life Insurance",
+      "type": "Auto",
+      "renewalDate": "2026-03-01",
+      "premium": "8788",
+      "maturityDate": "2027-06-19"
+    },
+    {
+      "id": 73,
+      "name": "IndiaFirst Life Plan",
+      "type": "Auto",
+      "renewalDate": "2026-05-21",
+      "premium": "13445",
+      "maturityDate": "2031-04-15"
+    },
+    {
+      "id": 74,
+      "name": "Sahara Life Suraksha",
+      "type": "Health",
+      "renewalDate": "2025-12-18",
+      "premium": "5619",
+      "maturityDate": "2027-05-12"
+    },
+    {
+      "id": 75,
+      "name": "AEGON Life iTerm Plus",
+      "type": "Health",
+      "renewalDate": "2026-04-05",
+      "premium": "5688",
+      "maturityDate": "2027-05-21"
     }
   ],
   "investments": [
     {
-      "id": 1,
+      "id": "1",
       "category": "Mutual Fund",
       "name": "Axis Bluechip Fund",
-      "initialValue": 55056,
-      "finalValue": 83583,
+      "invested": 55056,
+      "current": 83583,
       "years": 3,
       "premium": 4672,
       "maturityDate": "2028-08-27"
     },
     {
-      "id": 2,
+      "id": "2",
       "category": "Fixed Deposit",
       "name": "SBI Fixed Deposit",
-      "initialValue": 22377,
-      "finalValue": 27431,
+      "invested": 22377,
+      "current": 27431,
       "years": 4,
       "premium": 8695,
       "maturityDate": "2029-08-27"
     },
     {
-      "id": 3,
+      "id": "3",
       "category": "Mutual Fund",
       "name": "TCS Equity",
-      "initialValue": 50862,
-      "finalValue": 87316,
+      "invested": 50862,
+      "current": 87316,
       "years": 5,
       "premium": 2887,
       "maturityDate": "2030-08-27"
     },
     {
-      "id": 4,
+      "id": "4",
       "category": "Fixed Deposit",
       "name": "HDFC Small Cap Fund",
-      "initialValue": 68218,
-      "finalValue": 83582,
+      "invested": 68218,
+      "current": 83582,
       "years": 2,
       "premium": 3825,
       "maturityDate": "2027-08-28"
     },
     {
-      "id": 5,
+      "id": "5",
       "category": "Stock",
       "name": "ICICI Prudential FD",
-      "initialValue": 33414,
-      "finalValue": 50198,
+      "invested": 33414,
+      "current": 50198,
       "years": 3,
       "premium": 5169,
       "maturityDate": "2028-08-27"
     },
     {
-      "id": 6,
+      "id": "6",
       "category": "Fixed Deposit",
       "name": "Infosys Stock",
-      "initialValue": 32762,
-      "finalValue": 50430,
+      "invested": 32762,
+      "current": 50430,
       "years": 5,
       "premium": 2774,
       "maturityDate": "2030-08-27"
     },
     {
-      "id": 7,
+      "id": "7",
       "category": "Fixed Deposit",
       "name": "Kotak Flexi Cap Fund",
-      "initialValue": 46651,
-      "finalValue": 60364,
+      "invested": 46651,
+      "current": 60364,
       "years": 2,
       "premium": 8163,
       "maturityDate": "2027-08-28"
     },
     {
-      "id": 8,
+      "id": "8",
       "category": "Stock",
       "name": "Reliance FD",
-      "initialValue": 92573,
-      "finalValue": 114686,
+      "invested": 92573,
+      "current": 114686,
       "years": 3,
       "premium": 1619,
       "maturityDate": "2028-08-27"
     },
     {
-      "id": 9,
+      "id": "9",
       "category": "Mutual Fund",
       "name": "Aditya Birla Equity Fund",
-      "initialValue": 53316,
-      "finalValue": 92929,
+      "invested": 53316,
+      "current": 92929,
       "years": 5,
       "premium": 8864,
       "maturityDate": "2030-08-27"
     },
     {
-      "id": 10,
+      "id": "10",
       "category": "Mutual Fund",
       "name": "Wipro Stock",
-      "initialValue": 35288,
-      "finalValue": 43236,
+      "invested": 35288,
+      "current": 43236,
       "years": 2,
       "premium": 6217,
       "maturityDate": "2027-08-28"
     },
     {
-      "id": 11,
+      "id": "11",
       "category": "Mutual Fund",
       "name": "Nippon India Growth Fund",
-      "initialValue": 31027,
-      "finalValue": 34442,
+      "invested": 31027,
+      "current": 34442,
       "years": 1,
       "premium": 7947,
       "maturityDate": "2026-08-28"
     },
     {
-      "id": 12,
+      "id": "12",
       "category": "Fixed Deposit",
       "name": "Sundaram FD",
-      "initialValue": 57714,
-      "finalValue": 65221,
+      "invested": 57714,
+      "current": 65221,
       "years": 1,
       "premium": 6382,
       "maturityDate": "2026-08-28"
     },
     {
-      "id": 13,
+      "id": "13",
       "category": "Mutual Fund",
       "name": "Motilal Oswal Nasdaq Fund",
-      "initialValue": 48204,
-      "finalValue": 61711,
+      "invested": 48204,
+      "current": 61711,
       "years": 5,
       "premium": 8634,
       "maturityDate": "2030-08-27"
     },
     {
-      "id": 14,
+      "id": "14",
       "category": "Fixed Deposit",
       "name": "Tech Mahindra Stock",
-      "initialValue": 98902,
-      "finalValue": 182264,
+      "invested": 98902,
+      "current": 182264,
       "years": 5,
       "premium": 8528,
       "maturityDate": "2030-08-27"
     },
     {
-      "id": 15,
+      "id": "15",
       "category": "Fixed Deposit",
       "name": "DSP Tax Saver Fund",
-      "initialValue": 42406,
-      "finalValue": 60031,
+      "invested": 42406,
+      "current": 60031,
       "years": 3,
       "premium": 5275,
       "maturityDate": "2028-08-27"
     },
     {
-      "id": 16,
+      "id": "16",
       "category": "Stock",
       "name": "Tata FD",
-      "initialValue": 82021,
-      "finalValue": 119714,
+      "invested": 82021,
+      "current": 119714,
       "years": 4,
       "premium": 5834,
       "maturityDate": "2029-08-27"
     },
     {
-      "id": 17,
+      "id": "17",
       "category": "Fixed Deposit",
       "name": "L&T Emerging Businesses Fund",
-      "initialValue": 36720,
-      "finalValue": 43576,
+      "invested": 36720,
+      "current": 43576,
       "years": 2,
       "premium": 2207,
       "maturityDate": "2027-08-28"
     },
     {
-      "id": 18,
+      "id": "18",
       "category": "Stock",
       "name": "Mindtree Stock",
-      "initialValue": 68136,
-      "finalValue": 81608,
+      "invested": 68136,
+      "current": 81608,
       "years": 3,
       "premium": 8334,
       "maturityDate": "2028-08-27"
     },
     {
-      "id": 19,
+      "id": "19",
       "category": "Stock",
       "name": "Franklin India Bluechip Fund",
-      "initialValue": 48203,
-      "finalValue": 63240,
+      "invested": 48203,
+      "current": 63240,
       "years": 4,
       "premium": 8701,
       "maturityDate": "2029-08-27"
     },
     {
-      "id": 20,
+      "id": "20",
       "category": "Stock",
       "name": "IDFC FD",
-      "initialValue": 40798,
-      "finalValue": 43928,
+      "invested": 40798,
+      "current": 43928,
       "years": 1,
       "premium": 1600,
       "maturityDate": "2026-08-28"
     },
     {
-      "id": 21,
+      "id": "21",
       "category": "Mutual Fund",
       "name": "Canara Robeco Equity Fund",
-      "initialValue": 11036,
-      "finalValue": 17816,
+      "invested": 11036,
+      "current": 17816,
       "years": 5,
       "premium": 7235,
       "maturityDate": "2030-08-27"
     },
     {
-      "id": 22,
+      "id": "22",
       "category": "Stock",
       "name": "Persistent Systems Stock",
-      "initialValue": 70265,
-      "finalValue": 101904,
+      "invested": 70265,
+      "current": 101904,
       "years": 3,
       "premium": 2603,
       "maturityDate": "2028-08-27"
     },
     {
-      "id": 23,
+      "id": "23",
       "category": "Stock",
       "name": "UTI Nifty Index Fund",
-      "initialValue": 29771,
-      "finalValue": 36173,
+      "invested": 29771,
+      "current": 36173,
       "years": 2,
       "premium": 2788,
       "maturityDate": "2027-08-28"
     },
     {
-      "id": 24,
+      "id": "24",
       "category": "Mutual Fund",
       "name": "Bank of Baroda FD",
-      "initialValue": 49033,
-      "finalValue": 51643,
+      "invested": 49033,
+      "current": 51643,
       "years": 1,
       "premium": 2978,
       "maturityDate": "2026-08-28"
     },
     {
-      "id": 25,
+      "id": "25",
       "category": "Mutual Fund",
       "name": "HCL Technologies Stock",
-      "initialValue": 54478,
-      "finalValue": 57951,
+      "invested": 54478,
+      "current": 57951,
       "years": 1,
       "premium": 3991,
       "maturityDate": "2026-08-28"
+    },
+    {
+      "id": "1",
+      "category": "Mutual Fund",
+      "name": "AF Bluechip Fund",
+      "invested": "55056",
+      "current": "83583",
+      "years": "3",
+      "premium": "4672",
+      "maturityDate": "2028-08-27"
+    },
+    {
+      "id": "2",
+      "category": "Fixed Deposit",
+      "name": "BF Fixed Deposit",
+      "invested": "22377",
+      "current": "27431",
+      "years": "4",
+      "premium": "8695",
+      "maturityDate": "2029-08-27"
+    },
+    {
+      "id": "3",
+      "category": "Mutual Fund",
+      "name": "CF Equity",
+      "invested": "50862",
+      "current": "87316",
+      "years": "5",
+      "premium": "2887",
+      "maturityDate": "2030-08-27"
+    },
+    {
+      "id": "4",
+      "category": "Fixed Deposit",
+      "name": "DF Small Cap Fund",
+      "invested": "68218",
+      "current": "83582",
+      "years": "2",
+      "premium": "3825",
+      "maturityDate": "2027-08-28"
     }
   ]
 }

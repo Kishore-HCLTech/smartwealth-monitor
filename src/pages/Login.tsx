@@ -3,22 +3,20 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "sonner";
 
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 import { Eye, EyeOff } from "lucide-react";
 import { loginSuccess } from "@/redux/service/authSlice";
-import { API_BASE_URL, APP_NAME } from "@/constants/appConstants";
-
-const schema = yup.object().shape({
-  username: yup.string().required("Username is required"),
-  password: yup.string().required("Password is required"),
-});
+import {  APP_NAME } from "@/constants/appConstants";
+import { fetchInvestments } from "@/redux/service/investmentSlice";
+import { useAppDispatch } from "@/hooks/hooks";
+import axiosInstance from "@/axiosInstance";
+import { userSchema } from "@/validation/userSchema";
 
 type FormData = {
   username: string;
@@ -27,7 +25,7 @@ type FormData = {
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [error, setError] = useState("");
   const {
@@ -35,16 +33,16 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(userSchema),
   });
 
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = async (data: FormData) => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/users`, {
+      const res = await axiosInstance.get(`/users`, {
         params: {
-          username: data.username,
+          email: data.username,
           password: data.password,
         },
       });
@@ -75,6 +73,7 @@ const Login = () => {
 
         localStorage.setItem("user", JSON.stringify(user));
         dispatch(loginSuccess(user));
+        dispatch(fetchInvestments());
 
         toast.success("Login Successful!");
 
