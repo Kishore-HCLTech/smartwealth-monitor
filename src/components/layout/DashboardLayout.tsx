@@ -4,7 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import {Calculator,FileText,LayoutDashboard,LineChart,BellRing, Menu,} from "lucide-react";
+import {
+  Calculator,
+  FileText,
+  LayoutDashboard,
+  LineChart,
+  BellRing,
+  Menu,
+} from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/service/authSlice";
 import type { RootState } from "../../redux/store";
@@ -19,7 +26,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const [investmentOpen, setInvestmentOpen] = useState(false);
+  // const [investmentOpen, setInvestmentOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const user = useSelector((state: RootState) => state.auth.user);
@@ -28,7 +35,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
     { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     // { label: "Policy Overview", path: "/policy-overview", icon: FileText },
     { label: "Policy", path: "/policy", icon: FileText },
- 
+
     {
       label: "Investments",
       path: "/investment",
@@ -99,7 +106,6 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
         </div>
       </aside>
 
-
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#99CFF0] to-[#C3A1E6] p-4 flex items-center gap-4">
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild>
@@ -107,7 +113,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
               <Menu className="w-6 h-6" />
             </Button>
           </SheetTrigger>
-         
+
           <SheetContent
             side="left"
             className="bg-gradient-to-r from-[#99CFF0] to-[#C3A1E6] w-64 text-black flex flex-col justify-between"

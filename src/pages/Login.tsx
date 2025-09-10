@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import axios from "axios";
+// import axios from "axios";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Eye, EyeOff } from "lucide-react";
 import { loginSuccess } from "@/redux/service/authSlice";
-import {  APP_NAME } from "@/constants/appConstants";
+import { APP_NAME } from "@/constants/appConstants";
 import { fetchInvestments } from "@/redux/service/investmentSlice";
 import { useAppDispatch } from "@/hooks/hooks";
 import axiosInstance from "@/axiosInstance";

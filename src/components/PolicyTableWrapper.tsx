@@ -4,7 +4,6 @@ import type { RootState } from "@/redux/store";
 
 import type { Column } from "@/components/GenericTable"; // Import Column type if exported
 import type { Policy } from "@/types/policy";
-import { Eye, Pencil, Trash2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const columns: Column<Policy>[] = [
@@ -62,17 +61,17 @@ const columns: Column<Policy>[] = [
   // },
 ];
 
-const handleView = (row: Policy) => {
-  console.log("Viewing:", row);
-};
+// const handleView = (row: Policy) => {
+//   console.log("Viewing:", row);
+// };
 
-const handleEdit = (row: Policy) => {
-  console.log("Editing:", row);
-};
+// const handleEdit = (row: Policy) => {
+//   console.log("Editing:", row);
+// };
 
-const handleDelete = (id: number) => {
-  console.log("Deleting ID:", id);
-};
+// const handleDelete = (id: number) => {
+//   console.log("Deleting ID:", id);
+// };
 
 const PolicyTableWrapper = () => {
   const policies = useSelector((state: RootState) => state.policyData.policies);

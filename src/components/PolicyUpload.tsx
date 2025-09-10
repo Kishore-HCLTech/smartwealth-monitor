@@ -193,7 +193,7 @@ const PolicyUpload = () => {
             className="bg-white p-6 rounded-xl"
             tableClassName="table-auto w-auto text-sm"
             headerClassName="bg-gray-100"
-            rowClassName={(row, index) =>
+            rowClassName={(_, index) =>
               invalidRows.some((r) => r.index === index)
                 ? "bg-red-50 hover:bg-red-100"
                 : "hover:bg-gray-50"

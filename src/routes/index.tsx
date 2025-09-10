@@ -18,7 +18,7 @@ const Stocks = lazy(() => import("@/pages/Stocks"));
 const MutualFunds = lazy(() => import("@/pages/MutualFunds"));
 const FixedDeposit = lazy(() => import("@/pages/FixedDeposit"));
 
-const PolicyUpload = lazy(() => import("@/pages/PolicyUpload"));
+// const PolicyUpload = lazy(() => import("@/pages/PolicyUpload"));
 const PolicyManager = lazy(() => import("@/pages/PolicyManager"));
 
 export const routes: RouteObject[] = [

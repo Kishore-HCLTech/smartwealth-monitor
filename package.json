@@ -3,13 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Kishore-HCLTech.github.io/smartwealth-monitor",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest",
-    "json-server": "json-server --watch mock-api/db_fixed.json --port 3001"
+    "json-server": "json-server --watch mock-api/db_fixed.json --port 3001",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
@@ -26,6 +28,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
+    "gh-pages": "^6.3.0",
     "html2canvas": "^1.4.1",
     "html2canvas-oklch": "^1.5.0-alpha.0",
     "json-server": "^1.0.0-beta.3",
