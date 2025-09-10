@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/smartwealth-monitor", // 👈 Add this line
+  base: "/smartwealth-monitor/", // 👈 Add this line
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
